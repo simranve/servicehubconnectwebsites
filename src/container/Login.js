@@ -25,8 +25,8 @@ export default function Login () {
           </div>
 
           <div className='d-flex justify-content-between mt-4 mb-4'>
-            <Link className='cyanLinks'>Forgot Password?</Link>
-            <Link className='cyanLinks'>Sign Up</Link>
+            <Link to = "" className='cyanLinks'>Forgot Password?</Link>
+            <Link to = "" className='cyanLinks'>Sign Up</Link>
           </div>
         </div>
       </div>

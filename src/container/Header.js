@@ -18,83 +18,83 @@ export default function Header() {
   return (
     <header>
       <div className="container">
-        <div class="navbar-dark  position-fixed h-100 w-sidebar navbar-collapse collapse lftside">
-          <ul class="nav flex-column flex-nowrap  ulstyle">
-            <li class="nav-item">
+        <div className="navbar-dark  position-fixed h-100 w-sidebar navbar-collapse collapse lftside">
+          <ul className="nav flex-column flex-nowrap  ulstyle">
+            <li className="nav-item">
               <Link to="/">
-                <a class="nav-link active" href="#">
+                <a className="nav-link active" href="#">
                   <HomeIcon style={{ marginRight: "10px" }} />
                   Dashboard
                 </a>
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link to="/trackprofessional">
-                <a class="nav-link">
+                <a className="nav-link">
                   <AddLocationIcon style={{ marginRight: "10px" }} />
                   Track Professional
                 </a>
               </Link>
             </li>
-            <li class="nav-item ">
+            <li className="nav-item ">
               <Link to="/myservice">
-                <a class="nav-link" href="#">
+                <a className="nav-link" href="#">
                   <SettingsIcon style={{ marginRight: "10px" }} />
                   My Service
                 </a>
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link to="/myinvoice">
-                <a class="nav-link" href="#">
+                <a className="nav-link" href="#">
                   <LibraryBooksIcon style={{ marginRight: "10px" }} />
                   My Invoice
                 </a>
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link to="/carpoollist">
-                <a class="nav-link" href="#">
+                <a className="nav-link" href="#">
                   <GradeIcon style={{ marginRight: "10px" }} />
                   My Rating & Comment
                 </a>
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link to="/rescheduleservice">
-                <a class="nav-link" href="#">
+                <a className="nav-link" href="#">
                   <EventNoteIcon style={{ marginRight: "10px" }} />
                   Rescheduled Service
                 </a>
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link to="/">
-                <a class="nav-link" href="#">
+                <a className="nav-link" href="#">
                   <GroupIcon style={{ marginRight: "10px" }} />
                   Refer Friends
                 </a>
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link to="/">
-                <a class="nav-link" href="#">
+                <a className="nav-link" href="#">
                   <NotificationsIcon style={{ marginRight: "10px" }} />
                   Notification
                 </a>
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link to="/support">
-                <a class="nav-link" href="#">
+                <a className="nav-link" href="#">
                   <SupervisedUserCircleIcon style={{ marginRight: "10px" }} />
                   Supports
                 </a>
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link to="/settings">
-                <a class="nav-link" href="#">
+                <a className="nav-link" href="#">
                   <SettingsApplicationsIcon style={{ marginRight: "10px" }} />
                   Setting
                 </a>
@@ -117,7 +117,7 @@ export default function Header() {
               href="#"
               data-target=".collapse"
               role="button"
-              class="btn button-collapse  mt-3 "
+              className="btn button-collapse  mt-3 "
               style={{ marginLeft: "60px" }}
             >
               <img src={menu} style={{ height: "40px" }} />
@@ -149,21 +149,21 @@ export default function Header() {
                 Sign Up
               </a>
               <div
-                class="modal fade"
+                className="modal fade"
                 id="exampleModal"
-                tabindex="-1"
+                tabIndex="-1"
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
               >
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-body">
+                <div className="modal-dialog modal-dialog-centered">
+                  <div className="modal-content">
+                    <div className="modal-body">
                       <Signup />
                     </div>
-                    <div class="modal-footer">
+                    <div className="modal-footer">
                       <button
                         type="button"
-                        class="btn btn-secondary"
+                        className="btn btn-secondary"
                         data-dismiss="modal"
                       >
                         Close
@@ -183,21 +183,21 @@ export default function Header() {
                 Login
               </a>
               <div
-                class="modal fade"
+                className="modal fade"
                 id="exampleModal1"
-                tabindex="-1"
+                tabIndex="-1"
                 aria-labelledby="exampleModalLabel"
                 aria-hidden="true"
               >
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-body">
+                <div className="modal-dialog modal-dialog-centered">
+                  <div className="modal-content">
+                    <div className="modal-body">
                       <Login />
                     </div>
-                    <div class="modal-footer">
+                    <div className="modal-footer">
                       <button
                         type="button"
-                        class="btn btn-secondary"
+                        className="btn btn-secondary"
                         data-dismiss="modal"
                       >
                         Close

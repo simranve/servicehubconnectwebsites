@@ -50,7 +50,7 @@ export default function Signup () {
 
           <div className='d-flex justify-content-center mt-4 mb-4'>
             <p className='cyanLinks'>Already have an account?</p>
-            <Link className='cyanLinks'>Login</Link>
+            <Link to ="" className='cyanLinks'>Login</Link>
           </div>
         </div>
       </div>

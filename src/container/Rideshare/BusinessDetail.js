@@ -148,7 +148,7 @@ export default function CarpoolDetail() {
                       <div
                         class="modal fade"
                         id="exampleModal2"
-                        tabindex="-1"
+                        tabIndex="-1"
                         aria-labelledby="exampleModalLabel"
                         aria-hidden="true"
                       >
@@ -385,7 +385,7 @@ export default function CarpoolDetail() {
                       <div
                         class="modal fade"
                         id="exampleModal3"
-                        tabindex="-1"
+                        tabIndex="-1"
                         aria-labelledby="exampleModalLabel"
                         aria-hidden="true"
                       >
@@ -668,7 +668,7 @@ export default function CarpoolDetail() {
                       <div
                         class="modal fade"
                         id="exampleModal4"
-                        tabindex="-1"
+                        tabIndex="-1"
                         aria-labelledby="exampleModalLabel"
                         aria-hidden="true"
                       >
@@ -905,7 +905,7 @@ export default function CarpoolDetail() {
                       <div
                         class="modal fade"
                         id="exampleModal5"
-                        tabindex="-1"
+                        tabIndex="-1"
                         aria-labelledby="exampleModalLabel"
                         aria-hidden="true"
                       >
@@ -1188,7 +1188,7 @@ export default function CarpoolDetail() {
                       <div
                         class="modal fade"
                         id="exampleModal6"
-                        tabindex="-1"
+                        tabIndex="-1"
                         aria-labelledby="exampleModalLabel"
                         aria-hidden="true"
                       >
@@ -1425,7 +1425,7 @@ export default function CarpoolDetail() {
                       <div
                         class="modal fade"
                         id="exampleModal7"
-                        tabindex="-1"
+                        tabIndex="-1"
                         aria-labelledby="exampleModalLabel"
                         aria-hidden="true"
                       >
