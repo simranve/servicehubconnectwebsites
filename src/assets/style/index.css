@@ -555,12 +555,12 @@ header .navbar-nav li a {
 }
 .navtabs .navitems .navitemsa:hover {
   color: #2dbbab;
-  border-bottom: 2px solid #2dbbab !important;
+  border-bottom: 2px solid #2dbbab ;
   border-color: none !important;
 }
 .navtabs .navitems .navitemsa:active {
   color: #2dbbab;
-  border-bottom: 2px solid #2dbbab !important;
+  border-bottom: 2px solid #2dbbab;
   border-color: none !important;
 }
 .nav-tabs {
