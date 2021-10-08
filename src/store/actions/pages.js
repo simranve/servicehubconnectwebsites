@@ -25,6 +25,23 @@ export const fetchpagesListSUCCESS = (pages,message = '') => {
     message: message ? message : ''
   };
 };
+
+export const fetchpagesListTermsSUCCESS = (pages,message = '') => {
+  return {
+    type: actionTypes.FETCH_PAGES_TERMS_LIST_SUCCESS,
+    listing: pages,
+    message: message ? message : ''
+  };
+};
+
+export const fetchpagesListAboutSUCCESS = (pages,message = '') => {
+  return {
+    type: actionTypes.FETCH_PAGES_ABOUT_LIST_SUCCESS,
+    listing: pages,
+    message: message ? message : ''
+  };
+};
+
 export const fetchPromoCode = (pages,message = '') => {
   return {
     type: actionTypes.FETCH_PROMO_CODE_LIST_SUCCESS,
@@ -63,7 +80,19 @@ export const fetchpagesListAction = (data) => {
         .then(response => {
           if (response.status === 200) {
             if (response.data.status === 200) {
-              dispatch(fetchpagesListSUCCESS(response.data.data,""));
+              
+              if(data.page == "privacy_policy"){
+                dispatch(fetchpagesListSUCCESS(response.data.data,""));
+
+              }else if(data.page == "terms_condition")
+              {
+                dispatch(fetchpagesListTermsSUCCESS(response.data.data,""));
+              }
+              else if(data.page == "about_us")
+              {
+                dispatch(fetchpagesListAboutSUCCESS(response.data.data,""));
+              }
+              
             } else {
               dispatch(pagesActionFail(response.data.message));
             }

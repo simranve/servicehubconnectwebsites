@@ -5,6 +5,8 @@ const initialState = {
   error: null,
   success: null,
   pages: null,
+  term:null,
+  about:null,
   contact:null,
   promoCode:[]
 };
@@ -29,6 +31,26 @@ const reducer = (state = initialState, action) => {
             ...state,
             loading:null,
             pages:action.listing,
+            error:null,
+            success:action.message,
+            
+        }
+    
+    case actionTypes.FETCH_PAGES_TERMS_LIST_SUCCESS :
+        return {
+            ...state,
+            loading:null,
+            term:action.listing,
+            error:null,
+            success:action.message,
+            
+        }
+    
+    case actionTypes.FETCH_PAGES_ABOUT_LIST_SUCCESS :
+        return {
+            ...state,
+            loading:null,
+            about:action.listing,
             error:null,
             success:action.message,
             

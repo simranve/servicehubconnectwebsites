@@ -1,7 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import { connect } from "react-redux";
+import { withSnackbar } from "notistack";
+import * as actions from "../store/actions/index";
 
-export default function Signup () {
+class Signup extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      name:"",
+      email:"",
+      password:"",
+      mobile_no:"",
+      country_code:"",
+      local_city:""
+    }
+  }
+  render(){
   return (
     <div className='modalcont'>
       <div className='modalinner'>
@@ -57,3 +72,23 @@ export default function Signup () {
     </div>
   )
 }
+}
+const mapPropsToState = (state) => {
+  return {
+    loading: state.auth.loading,
+    error: state.auth.error,
+    isAuthenticated: state.auth.token !== null
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onAuth: (data) => dispatch(actions.auth(data))
+    
+  };
+};
+
+export default connect(
+  mapPropsToState,
+  mapDispatchToProps
+)(withSnackbar(Signup));

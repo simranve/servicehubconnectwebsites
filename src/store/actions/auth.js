@@ -46,7 +46,7 @@ export const auth = (data) => {
     };
 
     axios
-      .post(`/admin/login`, authData)
+      .post(`/webUser/login`, authData)
       .then(response => {
         if (response.status === 200) {
           let apiResponse = response.data;
