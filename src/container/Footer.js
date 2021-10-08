@@ -53,10 +53,13 @@ class Footer extends React.Component{
         <div className='row align-items-end'>
           <div className='col'>
             <ul className='sociallinks'>
-              <li><a href='#'><img src={require('../assets/images/facebook_ic.png')} /> Facebook</a></li>
-              <li><a href='#'><img src={require('../assets/images/twitter_ic.png')} /> Twitter</a></li>
-              <li><a href='#'><img src={require('../assets/images/linkedin_ic.png')} /> Linkedin</a></li>
-              <li><a href='#'><img src={require('../assets/images/instagram_ic.png')} /> Instagram</a></li>
+              <li><a href='https://www.facebook.com/profile.php?id=100071878116434' target="_blank"><img src={require('../assets/images/facebook_ic.png')} /> Facebook</a></li>
+              <li><a href='https://twitter.com/ServiceHubConn1' target="_blank"><img src={require('../assets/images/twitter_ic.png')} /> Twitter</a></li>
+              <li><a 
+              // href='https://www.facebook.com/profile.php?id=100071878116434' target="_blank"
+              href="#"
+              ><img src={require('../assets/images/linkedin_ic.png')} /> Linkedin</a></li>
+              <li><a href='https://www.instagram.com/servicehubconnect/' target="_blank"><img src={require('../assets/images/instagram_ic.png')} /> Instagram</a></li>
             </ul>
           </div>
           <div className='col-sm-6'>
@@ -168,7 +171,7 @@ class Footer extends React.Component{
             </div>
           </div>
           <div className='col-sm-3'>
-            <a href='#'>
+            <a href='https://apps.apple.com/in/app/servicehubconnect/id1588399255' target="_blank">
               <img src={require('../assets/images/app_store_ic.png')} style={{ height: 70, marginBottom: 10 }} />
             </a>
             <a href='#'>

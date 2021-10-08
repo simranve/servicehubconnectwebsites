@@ -42,6 +42,8 @@ class Header extends React.Component {
       })
     }
   render(){
+    const userToken = localStorage.getItem('token')
+    console.log(userToken)
     return (
       <header>
         <div className="container">
@@ -138,7 +140,7 @@ class Header extends React.Component {
                   style={{ width: "120px" }}
                 />
               </a>
-              <button
+              {/* <button
                 type="button"
                 data-toggle="collapse"
                 href="#"
@@ -148,7 +150,7 @@ class Header extends React.Component {
                 style={{ marginLeft: "60px" }}
               >
                 <img src={menu} style={{ height: "40px" }} />
-              </button>
+              </button> */}
             </div>
             <ul className="navbar-nav mr-auto">
               <li className="nav-item header-nav">
@@ -214,19 +216,22 @@ class Header extends React.Component {
                 </a>
               </li>
               <li className="nav-item header-nav">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/">
+                {/* <Link to="/carpool"> */}
                   Categories
                 </a>
               </li>
+              {
+                !userToken?
               <li className="nav-item header-nav">
-                <a
+                {/* <a
                   className="nav-link"
                   href="#"
                   data-toggle="modal"
                   data-target="#exampleModal"
                 >
                   Sign Up
-                </a>
+                </a> */}
                 <div
                   className="modal fade"
                   id="exampleModal"
@@ -251,41 +256,46 @@ class Header extends React.Component {
                     </div>
                   </div>
                 </div>
-              </li>
+              </li>:<li></li>}
+              {
+                !userToken?
+                
               <li className="nav-item header-nav">
-                <a
-                  className="nav-link"
-                  href="#"
-                  data-toggle="modal"
-                  data-target="#exampleModal1"
-                >
-                  Login
-                </a>
-                <div
-                  className="modal fade"
-                  id="exampleModal1"
-                  tabIndex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div className="modal-dialog modal-dialog-centered">
-                    <div className="modal-content">
-                      <div className="modal-body">
-                        <Login />
-                      </div>
-                      <div className="modal-footer">
-                        <button
-                          type="button"
-                          className="btn btn-secondary"
-                          data-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                      </div>
+              <a
+                className="nav-link"
+                href="#"
+                data-toggle="modal"
+                data-target="#exampleModal1"
+              >
+                Login
+              </a>
+              <div
+                className="modal fade"
+                id="exampleModal1"
+                tabIndex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div className="modal-dialog modal-dialog-centered">
+                  <div className="modal-content">
+                    <div className="modal-body">
+                      <Login />
+                    </div>
+                    <div className="modal-footer">
+                      <button
+                        type="button"
+                        className="btn btn-secondary"
+                        data-dismiss="modal"
+                      >
+                        Close
+                      </button>
                     </div>
                   </div>
                 </div>
+              </div>
               </li>
+              :<li></li>
+              }
             </ul>
           </nav>
         </div>

@@ -23,10 +23,11 @@ class Login extends React.Component {
     })
     if (!((this.state.email === '') && (this.state.password === ''))){
 
-      // this.props.onAuth({
-      //   email: this.state.email,
-      //   password: this.state.password,
-      // })
+      await this.props.onAuth({
+        email: this.state.email,
+        password: this.state.password,
+      })
+      // await window.location.reload(true);
 
     }
   }

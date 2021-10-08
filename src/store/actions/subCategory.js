@@ -35,7 +35,7 @@ export const fetchsubCategoryListAction = (data) => {
     dispatch(startsubCategoryAction());
     const authCode = "Bearer " + localStorage.getItem("token");
     axios
-      .get("/admin/category/get-sub-category/"+data, {
+      .get("/webUser/category/get-sub-category/"+data, {
         headers: { Authorization: authCode }
       })
       .then(response => {

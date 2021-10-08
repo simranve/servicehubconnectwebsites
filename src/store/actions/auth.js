@@ -39,10 +39,9 @@ export const auth = (data) => {
     dispatch(authStart());
     console.log(data)
     const authData = {
-      mobile_no: data.mobile_no,
+      email: data.email,
       password: data.password,
-      country_code: data.country_code,
-      user_type: data.user_type,
+      
     };
 
     axios
@@ -62,6 +61,7 @@ export const auth = (data) => {
             dispatch(
               authSuccess(response.headers.authorization, response.data.data)
             );
+            window.location.reload(true);
           }
         }
       })
@@ -71,6 +71,50 @@ export const auth = (data) => {
       });
   };
 };
+
+export const register = (data) => {
+  return dispatch => {
+    dispatch(authStart());
+    console.log(data)
+    const authData = {
+    
+      mobile_no:data.mobile_no,
+      country_code:data.country_code,
+      local_city:data.local_city,
+      name:data.name,
+      email: data.email,
+      password: data.password,
+      
+    };
+
+    axios
+      .post(`/webUser/register`, authData)
+      .then(response => {
+        if (response.status === 200) {
+          let apiResponse = response.data;
+          if (apiResponse.status === 0) {
+            dispatch(authFail(apiResponse.message));
+          } else {
+            // console.log(response.data._id);
+            
+            localStorage.setItem("token", response.headers.authorization);
+            localStorage.setItem("userId",response.data.data._id);
+            localStorage.setItem("userInfo", JSON.stringify(response.data.data));
+            console.log(localStorage.getItem("token"))
+            dispatch(
+              authSuccess(response.headers.authorization, response.data.data)
+            );
+            window.location.reload(true);
+          }
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        //dispatch(authFail(err.response.data.error))
+      });
+  };
+};
+
 export const logout = () => {
   return dispatch => {
     let authCode = "Bearer " + localStorage.getItem("token");
