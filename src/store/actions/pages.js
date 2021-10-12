@@ -135,7 +135,7 @@ export const getConactUs = () => {
       dispatch(startcontactAction());
       const authCode = "Bearer " + localStorage.getItem("token");
       axios
-        .get("/admin/page/get-contact-support-details",{
+        .get("/webUser/get-contact-support-details",{
           headers: { Authorization: authCode }
         })
         .then(response => {

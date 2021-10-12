@@ -121,10 +121,9 @@ class Homepage extends React.Component{
 
         <section className="mt-5">
           <div className="container">
-            <h1>Dashboard</h1>
-
+            <h1>Website shows features for now. To order download the app.</h1>
             <div className="dashItemCont mt-4">
-                  {categoryList}
+              {categoryList}
             </div>
           </div>
         </section>

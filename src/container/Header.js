@@ -28,7 +28,7 @@ class Header extends React.Component {
     await this.props.fetchpagesList({
       page:"about_us"
     });
-    
+    this.props.getConactUsAction();
   }
   
   handleSubmit = async () => {
@@ -211,7 +211,10 @@ class Header extends React.Component {
 
               </li>
               <li className="nav-item header-nav">
-                <a className="nav-link" href="#">
+                <a 
+                  className="nav-link"
+                  href="/support"
+                  >
                   Contact Us
                 </a>
               </li>
@@ -310,6 +313,7 @@ const mapPropsToState = (state) => {
     pages: state.pages.pages,
     term: state.pages.term,
     about: state.pages.about,
+    contact: state.pages.contact
   };
 };
 
@@ -317,6 +321,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchpagesList: (data) => dispatch(actions.fetchpagesListAction(data)),
     addPageAction: (data1,data2) => dispatch(actions.addPage(data1,data2)),
+    getConactUsAction: () => dispatch(actions.getConactUs()),
     
   };
 };
