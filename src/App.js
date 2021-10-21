@@ -29,7 +29,7 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Homepage} />
           <Route exact path='/subcategory' component={Rideshare} />
-          <Route path='/subcategory/:id/:name' render={(props) => <Rideshare {...props} />} />
+          <Route path='/subcategory' render={(props) => <Rideshare {...props} />} />
           <Route exact path='/carpool' component={Carpool} />
           <Route exact path='/carpoollist' component={CarpoolList} />
           <Route exact path='/carpooldetail' component={CarpoolDetail} />

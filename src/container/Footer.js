@@ -175,7 +175,7 @@ class Footer extends React.Component{
             <a href='https://apps.apple.com/in/app/servicehubconnect/id1588399255' target="_blank">
               <img src={require('../assets/images/app_store_ic.png')} style={{ height: 70, marginBottom: 10 }} />
             </a>
-            <a href='#'>
+            <a href='https://play.google.com/store/apps/details?id=com.Servicehubconnect' target="_blank">
               <img src={require('../assets/images/play_store_ic.png')} style={{ height: 70 }} />
             </a>
           </div>

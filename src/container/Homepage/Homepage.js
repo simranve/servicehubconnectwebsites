@@ -42,7 +42,15 @@ class Homepage extends React.Component{
                 <div><img src={datas.category_images} />
                 <h3>{datas.name}</h3></div>:
               <div>
-              <Link to={"/subcategory/"+datas._id+"/"+datas.name}>
+              <Link to={{
+                pathname:"/subcategory",
+                aboutProps:{
+                  name:datas._id,
+                  category:datas.name
+                }
+              }}
+              // {"/subcategory/"+datas._id}
+              >
                 <img src={datas.category_images} />
                 <h3>{datas.name}</h3>
               </Link></div>
@@ -56,7 +64,16 @@ class Homepage extends React.Component{
                 <div><img src={datas.category_images} />
                 <h3>{datas.name}</h3></div>:
               <div>
-              <Link to={"/subcategory/"+datas._id+"/"+datas.name}>
+              <Link
+                to={{
+                  pathname:"/subcategory",
+                  aboutProps:{
+                    name:datas._id,
+                    category:datas.name
+                  }
+                }} 
+              // to={"/subcategory/"+datas._id}
+              >
                 <img src={datas.category_images} />
                 <h3>{datas.name}</h3>
               </Link></div>
@@ -70,7 +87,16 @@ class Homepage extends React.Component{
                 <div><img src={datas.category_images} />
                 <h3>{datas.name}</h3></div>:
               <div>
-              <Link to={"/subcategory/"+datas._id+"/"+datas.name}>
+              <Link
+              to={{
+                pathname:"/subcategory",
+                aboutProps:{
+                  name:datas._id,
+                  category:datas.name
+                }
+              }} 
+              // to={"/subcategory/"+datas._id}
+              >
                 <img src={datas.category_images} />
                 <h3>{datas.name}</h3>
               </Link></div>
@@ -84,7 +110,16 @@ class Homepage extends React.Component{
                 <div><img src={datas.category_images} />
                 <h3>{datas.name}</h3></div>:
               <div>
-              <Link to={"/subcategory/"+datas._id+"/"+datas.name}>
+              <Link
+              to={{
+                pathname:"/subcategory",
+                aboutProps:{
+                  name:datas._id,
+                  category:datas.name
+                }
+              }}
+              //  to={"/subcategory/"+datas._id}
+              >
                 <img src={datas.category_images} />
                 <h3>{datas.name}</h3>
               </Link></div>
@@ -96,7 +131,16 @@ class Homepage extends React.Component{
                 <div><img src={datas.category_images} />
                 <h3>{datas.name}</h3></div>:
               <div>
-              <Link to={"/subcategory/"+datas._id+"/"+datas.name}>
+              <Link 
+                to={{
+                  pathname:"/subcategory",
+                  aboutProps:{
+                    name:datas._id,
+                    category:datas.name
+                  }
+                }}
+              // to={"/subcategory/"+datas._id}
+              >
                 <img src={datas.category_images} />
                 <h3>{datas.name}</h3>
               </Link></div>
