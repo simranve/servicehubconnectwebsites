@@ -46,6 +46,34 @@ header {
   margin-top: 10px;
   color: #1d9dfc;
 }
+.dashItemCont1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.dashItemCont1 .dashItem h3 {
+  font-size: 1.2rem;
+  margin-top: 4px;
+  color: #ff1100;
+}
+.dashItemCont1 .dashItem {
+  background: #ddf0ff;
+  width: 32%;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.dashItemCont1 .dashItem h4 {
+  font-size: 1rem;
+  margin-top: 1px;
+  color: #0b263a;
+}
 footer {
   background: var(--cyan);
   padding: 30px 0;
