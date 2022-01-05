@@ -60,9 +60,18 @@ class Rideshare extends React.Component {
       categoryList1.push(
         <div className="ridebox">
                 {/* <Link to="/carpool"> */}
+                <Link to={{
+                pathname:"/TrackBusinessUsers",
+                aboutProps:{
+                  name:this.props.subcategorylisting[index]._id,
+                }
+              }}
+              // {"/subcategory/"+datas._id}
+              >
+                {/* </Link> */}
                   <img className="rounded-circle mb-15" width="100" height="100" src={this.props.subcategorylisting[index].sub_category_images} />
                   <h3>{this.props.subcategorylisting[index].name}</h3>
-                {/* </Link> */}
+                </Link>
               </div>
       )
       if(i == 4 || this.props.subcategorylisting.length == index+1 ){

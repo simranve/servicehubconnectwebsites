@@ -6,6 +6,8 @@ import { createBrowserHistory } from 'history';
 
 import Homepage from './container/Homepage/Homepage';
 import Rideshare from './container/Rideshare/Rideshare';
+import TrackBusinessUsers from './container/Homepage/TrackBusinessUsers';
+
 import Carpool from './container/Rideshare/Carpool';
 import CarpoolList from './container/Rideshare/CarpoolList';
 import CarpoolDetail from './container/Rideshare/CarpoolDetail';
@@ -19,6 +21,7 @@ import Support from './container/Rideshare/Support';
 import BusinessDetail from './container/Rideshare/BusinessDetail';
 import { SnackbarProvider } from "notistack";
 
+
 const history = createBrowserHistory()
 
 const App = () => {
@@ -30,6 +33,10 @@ const App = () => {
           <Route exact path='/' component={Homepage} />
           <Route exact path='/subcategory' component={Rideshare} />
           <Route path='/subcategory' render={(props) => <Rideshare {...props} />} />
+          
+          <Route exact path='/TrackBusinessUsers' component={TrackBusinessUsers} />
+          <Route path='/TrackBusinessUsers' render={(props) => <TrackBusinessUsers {...props} />} />
+          
           <Route exact path='/carpool' component={Carpool} />
           <Route exact path='/carpoollist' component={CarpoolList} />
           <Route exact path='/carpooldetail' component={CarpoolDetail} />

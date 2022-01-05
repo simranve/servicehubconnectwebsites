@@ -27,18 +27,18 @@ export const fetchbusinessDataSUCCESS = (professionalList) => {
     listing: professionalList,
   };
 };
-export const fetchbussinessListAction = (message) => {
+export const fetchbussinessListAction = (data) => {
   return dispatch => {
     dispatch(startbussinessAction());
     const authCode = "Bearer " + localStorage.getItem("token");
     axios
-      .get("/admin/get-bussiness-user", {
+      .post("/webCustomer/businessList",data, {
         headers: { Authorization: authCode }
       })
       .then(response => {
         if (response.status === 200) {
           if (response.data.status === 200) {
-            dispatch(fetchbussinessListSUCCESS(response.data.data,message));
+            dispatch(fetchbussinessListSUCCESS(response.data.data));
           } else {
             dispatch(bussinessActionFail(response.data.message));
           }
