@@ -38,9 +38,9 @@ class Homepage extends React.Component{
             
             <div className="dashItem" style={{ background: "#fef7da" }}>
               {
-                !userToken?
-                <div><img src={datas.category_images} />
-                <h3>{datas.name}</h3></div>:
+                // !userToken?
+                // <div><img src={datas.category_images} />
+                // <h3>{datas.name}</h3></div>:
               <div>
               <Link to={{
                 pathname:"/subcategory",
@@ -60,9 +60,9 @@ class Homepage extends React.Component{
           
           <div className="dashItem" style={{ background: "#fee7db" }}>
           {
-                !userToken?
-                <div><img src={datas.category_images} />
-                <h3>{datas.name}</h3></div>:
+                // !userToken?
+                // <div><img src={datas.category_images} />
+                // <h3>{datas.name}</h3></div>:
               <div>
               <Link
                 to={{
@@ -83,9 +83,9 @@ class Homepage extends React.Component{
                   
               <div className="dashItem" style={{ background: "#f0ddfe" }}>
               {
-                !userToken?
-                <div><img src={datas.category_images} />
-                <h3>{datas.name}</h3></div>:
+                // !userToken?
+                // <div><img src={datas.category_images} />
+                // <h3>{datas.name}</h3></div>:
               <div>
               <Link
               to={{
@@ -106,9 +106,9 @@ class Homepage extends React.Component{
             (i===4)?
             <div className="dashItem" style={{ background: "#ddf0ff" }}>
             {
-                !userToken?
-                <div><img src={datas.category_images} />
-                <h3>{datas.name}</h3></div>:
+                // !userToken?
+                // <div><img src={datas.category_images} />
+                // <h3>{datas.name}</h3></div>:
               <div>
               <Link
               to={{
@@ -127,9 +127,9 @@ class Homepage extends React.Component{
           </div>:
             <div className="dashItem" style={{ background: "#f0ddfe" }}>
             {
-                !userToken?
-                <div><img src={datas.category_images} />
-                <h3>{datas.name}</h3></div>:
+                // !userToken?
+                // <div><img src={datas.category_images} />
+                // <h3>{datas.name}</h3></div>:
               <div>
               <Link 
                 to={{
