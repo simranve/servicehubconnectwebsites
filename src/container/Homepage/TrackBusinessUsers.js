@@ -7,14 +7,26 @@ import * as actions from "../../store/actions/index";
 import { connect } from "react-redux";
 import { withSnackbar } from "notistack";
 
+import rating from "../../assets/images/rating_on_ic.png";
 // export default function TrackBusinessUsers() {
 class TrackBusinessUsers extends React.Component {
   componentWillMount() {
+    
+  
     if (this.props != undefined && this.props.location != undefined && this.props.location.aboutProps != undefined && this.props.location.aboutProps.name != undefined) {
+      var name = this.props.location.aboutProps.name
+      navigator.geolocation.getCurrentPosition(function(position) {
+        // console.log("Latitude is :", position.coords.latitude);
+        // console.log("Longitude is :", position.coords.longitude);
         let data = {
-            subCategoryId:this.props.location.aboutProps.name
+          subCategoryId:name,
+          latitude:position.coords.latitude,
+          longitude:position.coords.longitude,
+          day:(new Date()).getDay()
         };
         this.props.fetchbussinessList(data)
+
+      });
     }
   }
   render() {
@@ -47,6 +59,15 @@ class TrackBusinessUsers extends React.Component {
                             <p>{e.business_owner_name}</p>
                             <p>{e.local_city}</p>
                             <p>{e.bussiness_email}</p>
+                            <p>Contact Number {e.country_code} {e.mobile_no}</p>
+                            <p>
+                              <img
+                                src={rating}
+                              />{" "}
+                              <span>{e.businessRating} Star Rating</span>
+                            </p>
+                            
+
                         </div>
                     </div>
                   </div>

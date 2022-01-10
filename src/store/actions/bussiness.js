@@ -29,6 +29,7 @@ export const fetchbusinessDataSUCCESS = (professionalList) => {
 };
 export const fetchbussinessListAction = (data) => {
   return dispatch => {
+    console.log(data)
     dispatch(startbussinessAction());
     const authCode = "Bearer " + localStorage.getItem("token");
     axios
