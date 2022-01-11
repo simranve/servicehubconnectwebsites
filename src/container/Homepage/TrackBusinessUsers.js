@@ -10,23 +10,32 @@ import { withSnackbar } from "notistack";
 import rating from "../../assets/images/rating_on_ic.png";
 // export default function TrackBusinessUsers() {
 class TrackBusinessUsers extends React.Component {
-  componentWillMount() {
+  constructor(props) {
+    console.log(props)
+    super(props)
+    this.state = {
+    }
+  }
+  componentDidMount() {
     
-  
-    if (this.props != undefined && this.props.location != undefined && this.props.location.aboutProps != undefined && this.props.location.aboutProps.name != undefined) {
-      var name = this.props.location.aboutProps.name
+    let data = {}
+    let self = this
+    if (self.props != undefined && self.props.location != undefined && self.props.location.aboutProps != undefined && self.props.location.aboutProps.name != undefined) {
+      var name = self.props.location.aboutProps.name
       navigator.geolocation.getCurrentPosition(function(position) {
         // console.log("Latitude is :", position.coords.latitude);
         // console.log("Longitude is :", position.coords.longitude);
-        let data = {
+        data = {
           subCategoryId:name,
-          latitude:position.coords.latitude,
-          longitude:position.coords.longitude,
+          // latitude:position.coords.latitude,
+          // longitude:position.coords.longitude,
+          longitude:-88.27857348227539,
+        	latitude:40.08201745156272,
           day:(new Date()).getDay()
         };
-        this.props.fetchbussinessList(data)
-
+        self.props.fetchbussinessList(data)  
       });
+      
     }
   }
   render() {
