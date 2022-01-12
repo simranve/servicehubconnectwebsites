@@ -20,21 +20,21 @@ class TrackBusinessUsers extends React.Component {
     let self = this;
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     console.log("timezone",timezone);
-    if (self.props != undefined && self.props.location != undefined && self.props.location.aboutProps != undefined && self.props.location.aboutProps.name != undefined) {
-      var name = self.props.location.aboutProps.name
+    // if (self.props != undefined && self.props.location != undefined && self.props.location.aboutProps != undefined && self.props.location.aboutProps.name != undefined) {
+    //   var name = self.props.location.aboutProps.name
       navigator.geolocation.getCurrentPosition(function(position) {
         data = {
-          subCategoryId:name,//"6055b92178d8eb46148fb5a9",
-          latitude:position.coords.latitude,
-          longitude:position.coords.longitude,
-          // longitude:-88.27857348227539,
-        	// latitude:40.08201745156272,
-          time_zone :timezone
+          subCategoryId:"6055bde878d8eb46148fb5b0",//name,
+          // latitude:position.coords.latitude,
+          // longitude:position.coords.longitude,
+          longitude:-88.27857348227539,
+        	latitude:40.08201745156272,
+          time_zone :"America/Chicago"//timezone
         };
         self.props.fetchbussinessList(data)  
       });
       
-    }
+    // }
   }
   render() {
     let businessCategoryTable = <div />;
@@ -42,10 +42,10 @@ class TrackBusinessUsers extends React.Component {
     let stars = <div></div>
     {this.props.bussinesslisting.length > 0
       ? this.props.bussinesslisting.map(e => {
-        if(e.website == ""){
+        // if(e.website == ""){
 
-        }
-        else{
+        // }
+        // else{
           if(Math.floor(e.businessRating) == 0){
             stars = <div> No Stars</div>
           }
@@ -88,21 +88,47 @@ class TrackBusinessUsers extends React.Component {
               <img src={rating}/>{e.businessRating} Star Rating
             </div>
           }
+          var start_time = "";
+          var end_time = "";
+          if(e.bussiness_info == undefined && e.bussiness_info.happy_hours == undefined &&  e.bussiness_info.happy_hours.start_time == undefined){
+
+          }
+          else if(e.bussiness_info.happy_hours.start_time == "" && e.bussiness_info.happy_hours.end_time == "" ){
+
+          }
+          else{
+            var start_hour = parseInt(e.bussiness_info.happy_hours.start_time.split(":")[0]) > 12 ?parseInt(e.bussiness_info.happy_hours.start_time.split(":")[0]) -12 : parseInt(e.bussiness_info.happy_hours.start_time.split(":")[0]) 
+            var start_min = e.bussiness_info.happy_hours.start_time.split(":")[1]
+            var start_am_pm = parseInt(e.bussiness_info.happy_hours.start_time.split(":")[0]) > 12 ? "PM":"AM"
+            start_hour = start_hour > 9 ? start_hour:"0"+start_hour
+            start_time = start_hour+":"+start_min+" "+start_am_pm;
+
+
+            var end_hour = parseInt(e.bussiness_info.happy_hours.end_time.split(":")[0]) > 12 ?parseInt(e.bussiness_info.happy_hours.end_time.split(":")[0]) -12 : parseInt(e.bussiness_info.happy_hours.end_time.split(":")[0]) 
+            end_hour = end_hour > 9 ? end_hour:"0"+end_hour
+
+            var end_min = e.bussiness_info.happy_hours.end_time.split(":")[1]
+            var end_am_pm = parseInt(e.bussiness_info.happy_hours.end_time.split(":")[0]) > 12 ? "PM":"AM"
+            end_time = end_hour+":"+end_min+" "+end_am_pm;
+
+          }
           categoryList.push(
             {
-              business_logo:<a target="_blank" href={e.website}><div className="carpoolImage"><img src={e.business_logo} /></div></a>,
+              business_logo:<a target="_blank" href={e.website}><img src={e.business_logo} className="rounded-circle mb-15" style={{height: "329px",width: "329px"}}/></a>,
               data:<a target="_blank" href={e.website}>
                 <div className="carpoolContent" style={{ borderRight: "1px solid #999", flex: 1 }} >
+                  
                   <div>
                       <p>Happy Hours</p>
-                      <span>{e.bussiness_info.happy_hours.start_time} - {e.bussiness_info.happy_hours.end_time}</span>
+                      <span>{start_time} - {end_time}</span>
                       <div className="ratingBox">{e.bussiness_info.happy_hours.discount}%</div>
                   </div>
                     
                   <h3>{e.bussiness_name}</h3>
-                  <p>{e.business_owner_name}</p>
+                  {/* <p>{e.business_owner_name}</p> */}
+                  <p>{e.description}</p>
                   <p>{e.local_city}</p>
-                  <p>{e.bussiness_email}</p>
+                  {/* <p>{e.bussiness_email}</p> */}
                   <p>Contact Number {e.country_code} {e.mobile_no}</p>
                   <p>
                     
@@ -129,7 +155,7 @@ class TrackBusinessUsers extends React.Component {
               </a>
               }
           )
-        }
+        // }
         
       })
 
