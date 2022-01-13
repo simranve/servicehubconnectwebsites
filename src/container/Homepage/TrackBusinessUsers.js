@@ -13,6 +13,7 @@ class TrackBusinessUsers extends React.Component {
     super(props)
     this.state = {
     }
+    // this.link=this.link.bind(this);
   }
   componentDidMount() {
     
@@ -20,21 +21,21 @@ class TrackBusinessUsers extends React.Component {
     let self = this;
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     console.log("timezone",timezone);
-    // if (self.props != undefined && self.props.location != undefined && self.props.location.aboutProps != undefined && self.props.location.aboutProps.name != undefined) {
-    //   var name = self.props.location.aboutProps.name
+    if (self.props != undefined && self.props.location != undefined && self.props.location.aboutProps != undefined && self.props.location.aboutProps.name != undefined) {
+      var name = self.props.location.aboutProps.name
       navigator.geolocation.getCurrentPosition(function(position) {
         data = {
-          subCategoryId:"6055bde878d8eb46148fb5b0",//name,
-          // latitude:position.coords.latitude,
-          // longitude:position.coords.longitude,
-          longitude:-88.27857348227539,
-        	latitude:40.08201745156272,
-          time_zone :"America/Chicago"//timezone
+          subCategoryId:name,//"6055bde878d8eb46148fb5b0",//
+          latitude:position.coords.latitude,
+          longitude:position.coords.longitude,
+          // longitude:-88.27857348227539,
+        	// latitude:40.08201745156272,
+          time_zone :timezone//"America/Chicago"//
         };
         self.props.fetchbussinessList(data)  
       });
       
-    // }
+    }
   }
   render() {
     let businessCategoryTable = <div />;
@@ -42,10 +43,10 @@ class TrackBusinessUsers extends React.Component {
     let stars = <div></div>
     {this.props.bussinesslisting.length > 0
       ? this.props.bussinesslisting.map(e => {
-        // if(e.website == ""){
+        if(e.website == ""){
 
-        // }
-        // else{
+        }
+        else{
           if(Math.floor(e.businessRating) == 0){
             stars = <div> No Stars</div>
           }
@@ -112,12 +113,16 @@ class TrackBusinessUsers extends React.Component {
             end_time = end_hour+":"+end_min+" "+end_am_pm;
 
           }
+          var website = e.website;
           categoryList.push(
             {
-              business_logo:<a target="_blank" href={e.website}><img src={e.business_logo} className="rounded-circle mb-15" style={{height: "329px",width: "329px"}}/></a>,
+              business_logo:
+              <a 
+              target="_blank" href={(website.indexOf("https://") == 0)?website:'https://'+website}
+              // onclick={()=>this.link(e.website)} 
+              ><img src={e.business_logo} className="rounded-circle mb-15" style={{height: "329px",width: "329px"}}/></a>,
               data:<a target="_blank" href={e.website}>
                 <div className="carpoolContent" style={{ borderRight: "1px solid #999", flex: 1 }} >
-                  
                   <div>
                       <p>Happy Hours</p>
                       <span>{start_time} - {end_time}</span>
@@ -155,7 +160,7 @@ class TrackBusinessUsers extends React.Component {
               </a>
               }
           )
-        // }
+        }
         
       })
 
