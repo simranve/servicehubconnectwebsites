@@ -25,12 +25,12 @@ class TrackBusinessUsers extends React.Component {
       var name = self.props.location.aboutProps.name
       navigator.geolocation.getCurrentPosition(function(position) {
         data = {
-          subCategoryId:name,//"6055bde878d8eb46148fb5b0",//
+          subCategoryId:name,//,//
           latitude:position.coords.latitude,
           longitude:position.coords.longitude,
           // longitude:-88.27857348227539,
         	// latitude:40.08201745156272,
-          time_zone :timezone//"America/Chicago"//
+          time_zone :timezone
         };
         self.props.fetchbussinessList(data)  
       });
@@ -121,7 +121,7 @@ class TrackBusinessUsers extends React.Component {
               target="_blank" href={(website.indexOf("https://") == 0)?website:'https://'+website}
               // onclick={()=>this.link(e.website)} 
               ><img src={e.business_logo} className="rounded-circle mb-15" style={{height: "329px",width: "329px"}}/></a>,
-              data:<a target="_blank" href={e.website}>
+              data:<a target="_blank" href={(website.indexOf("https://") == 0)?website:'https://'+website}>
                 <div className="carpoolContent" style={{ borderRight: "1px solid #999", flex: 1 }} >
                   <div>
                       <p>Happy Hours</p>
@@ -154,6 +154,7 @@ class TrackBusinessUsers extends React.Component {
   
                         }
                     </span>
+                    <div className ="button_box"><button type="button" class="btn btn-danger">Order or Book Now</button></div>
                   </p>
   
                 </div>

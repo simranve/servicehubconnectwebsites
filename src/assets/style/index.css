@@ -239,6 +239,14 @@ section {
   font-weight: bold;
 }
 
+.button_box {
+  float: right;
+  padding-top:10px;
+  padding-right: 89px;
+}
+.button_box button{
+  height:59px;
+}
 .tabNav .nav-item:first-child a {
   border-top: 0;
 }
