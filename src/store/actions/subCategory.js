@@ -22,6 +22,14 @@ export const fetchsubCategoryListSUCCESS = (subCategoryList,message = '') => {
   };
 };
 
+export const fetchsubCategoryNameListSUCCESS = (subCategoryList,message = '') => {
+  return {
+    type: actionTypes.FETCH_SUB_CATEGORY_NAME_LIST_SUCCESS,
+    listing: subCategoryList,
+    message: message ? message : ''
+  };
+};
+
 export const fetchallsubCategoryListSUCCESS = (allsubCategoryList,message = '') => {
   return {
     type: actionTypes.FETCH_ALL_SUB_CATEGORY_LIST_SUCCESS,
@@ -169,6 +177,30 @@ export const fetchallsubCategoryListAction = () => {
         if (response.status === 200) {
           if (response.data.status === 200) {
             dispatch(fetchallsubCategoryListSUCCESS(response.data.data,""));
+          } else {
+            dispatch(subCategoryActionFail(response.data.message));
+          }
+        } else {
+          dispatch(subCategoryActionFail(response.message));
+        }
+      })
+      .catch(err => {
+        dispatch(subCategoryActionFail(err.message));
+      });
+  };
+};
+export const fetchsubCategoryBynameListAction = (data) => {
+  return dispatch => {
+    dispatch(startsubCategoryAction());
+    const authCode = "Bearer " + localStorage.getItem("token");
+    axios
+      .get("/admin/category/get-sub-category-short-name/"+data, {
+        headers: { Authorization: authCode }
+      })
+      .then(response => {
+        if (response.status === 200) {
+          if (response.data.status === 200) {
+            dispatch(fetchsubCategoryNameListSUCCESS(response.data.data,""));
           } else {
             dispatch(subCategoryActionFail(response.data.message));
           }

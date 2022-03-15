@@ -5,6 +5,7 @@ const initialState = {
   error: null,
   success: null,
   subcategorylisting: [],
+  subcategoryNamelisting:[],
   alllisting: []
 };
 
@@ -32,6 +33,16 @@ const reducer = (state = initialState, action) => {
             success:action.message,
             
         }
+    
+    case actionTypes.FETCH_SUB_CATEGORY_NAME_LIST_SUCCESS :
+      return {
+          ...state,
+          loading:null,
+          subcategoryNamelisting:action.listing,
+          error:null,
+          success:action.message,
+          
+      }
     case actionTypes.FETCH_ALL_SUB_CATEGORY_LIST_SUCCESS :
         return {
             ...state,

@@ -18,6 +18,7 @@ export {
 
 export {
   fetchbussinessListAction,
+  fetchbussinessListNameAction,
   businessDeleteAction,
   businessActiveInactive,
   addBusiness,
@@ -42,7 +43,8 @@ export {
   subCategoryDeleteAction,
   subCategoryUpdateAction,
   subCategoryUpdateImageAction,
-  fetchallsubCategoryListAction
+  fetchallsubCategoryListAction,
+  fetchsubCategoryBynameListAction
 } from './subCategory'
 
 export {

@@ -7,6 +7,7 @@ import { createBrowserHistory } from 'history';
 import Homepage from './container/Homepage/Homepage';
 import Rideshare from './container/Rideshare/Rideshare';
 import TrackBusinessUsers from './container/Homepage/TrackBusinessUsers';
+import TrackBusinessUsersWithShortKeys from './container/Homepage/TrackBusinessUsersWithShortKeys';
 
 import Carpool from './container/Rideshare/Carpool';
 import CarpoolList from './container/Rideshare/CarpoolList';
@@ -36,7 +37,6 @@ const App = () => {
           
           <Route exact path='/TrackBusinessUsers' component={TrackBusinessUsers} />
           <Route path='/TrackBusinessUsers' render={(props) => <TrackBusinessUsers {...props} />} />
-          
           <Route exact path='/carpool' component={Carpool} />
           <Route exact path='/carpoollist' component={CarpoolList} />
           <Route exact path='/carpooldetail' component={CarpoolDetail} />
@@ -49,6 +49,7 @@ const App = () => {
           <Route exact path='/businessdetail' component={BusinessDetail} />
 
           <Route exact path='/settings' component={Settings} />
+          <Route path='/:id' render={(props) => <TrackBusinessUsersWithShortKeys {...props} />} />
         </Switch>
         
       </div>

@@ -5,6 +5,7 @@ const initialState = {
   error: null,
   success: null,
   bussinesslisting: [],
+  bussinesslistingNew:[],
   data_bussiness:[]
 };
 
@@ -33,6 +34,18 @@ const reducer = (state = initialState, action) => {
             success:action.message,
             
         }
+
+      case actionTypes.FETCH_BUSSINESS_NEW_LIST_SUCCESS :
+        
+        return {
+            ...state,
+            loading:null,
+            bussinesslistingNew:action.listing,
+            error:null,
+            success:action.message,
+            
+        }
+      
     case actionTypes.FETCH_BUSSINESS_DATA_SUCCESS :
       return {
           ...state,

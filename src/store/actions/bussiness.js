@@ -21,6 +21,15 @@ export const fetchbussinessListSUCCESS = (bussinessList,message = '') => {
     message: message ? message : ''
   };
 };
+
+export const fetchbussinesNEWsListSUCCESS = (bussinessList,message = '') => {
+  return {
+    type: actionTypes.FETCH_BUSSINESS_NEW_LIST_SUCCESS,
+    listing: bussinessList,
+    message: message ? message : ''
+  };
+};
+
 export const fetchbusinessDataSUCCESS = (professionalList) => {
   return {
     type: actionTypes.FETCH_BUSSINESS_DATA_SUCCESS,
@@ -40,6 +49,32 @@ export const fetchbussinessListAction = (data) => {
         if (response.status === 200) {
           if (response.data.status === 200) {
             dispatch(fetchbussinessListSUCCESS(response.data.data));
+          } else {
+            dispatch(bussinessActionFail(response.data.message));
+          }
+        } else {
+          dispatch(bussinessActionFail(response.message));
+        }
+      })
+      .catch(err => {
+        dispatch(bussinessActionFail(err.message));
+      });
+  };
+};
+export const fetchbussinessListNameAction = (data) => {
+  return dispatch => {
+    console.log(data)
+    dispatch(startbussinessAction());
+    const authCode = "Bearer " + localStorage.getItem("token");
+    axios
+      .post("/webCustomer/businessListName",data, {
+        headers: { Authorization: authCode }
+      })
+      .then(response => {
+        if (response.status === 200) {
+          if (response.data.status === 200) {
+            
+            dispatch(fetchbussinesNEWsListSUCCESS(response.data.data));
           } else {
             dispatch(bussinessActionFail(response.data.message));
           }
