@@ -121,7 +121,8 @@ class TrackBusinessUsersWithShortKeys extends React.Component {
             
             discount = e.bussiness_info.happy_hours.discount
           }
-          var website = e.website;
+          var addwebsite_url = (e.rideShare_delivery == null)?"": "/" +e.rideShare_delivery + "/" + e.location_required
+          var website = e.website + addwebsite_url +"/"+ e.subCategoryId;
           categoryList.push(
             {
               business_logo:

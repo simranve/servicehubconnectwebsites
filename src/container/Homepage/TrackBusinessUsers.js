@@ -113,7 +113,8 @@ class TrackBusinessUsers extends React.Component {
             end_time = end_hour+":"+end_min+" "+end_am_pm;
 
           }
-          var website = e.website;
+          var addwebsite_url = (e.rideShare_delivery == null)?"": "/" +e.rideShare_delivery + "/" + e.location_required
+          var website = e.website + addwebsite_url +"/"+ e.subCategoryId;
           categoryList.push(
             {
               business_logo:
