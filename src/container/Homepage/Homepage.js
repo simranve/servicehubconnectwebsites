@@ -187,20 +187,29 @@ class Homepage extends React.Component{
               </div>
               <div className="dashItem" style={{ background: "#DAA520" }}>
                     <h3>Gold Package</h3> 
-                    <h3>$99/Month</h3>
-                    <h3>All benefits of basic package plus</h3>
-                    <h4>i. Personalized business online ordering or booking website</h4>
-                    <h4>ii. Restaurant, grocery and product pick up and delivery available </h4>
-                    <h4>iii. Privacy policy, terms and conditions for personalized business website</h4> 
-                    <h4>iv. Social media available </h4>
-                    <h4>vii. One app for all businesses</h4>
+                    <h3>$299.99/month</h3>
+                    <h3>All benefits of basics package plus</h3>
+                    <h4>(1) Personalized business online booking or ordering website </h4>
+                    <h4>(2) Group Facebook marketing </h4>
+                    <h4>(3) Group Instagram marketing </h4> 
+                    <h4>(4) Group google marketing </h4>
+                    <h4>(5) Email marketing</h4>
+                    <h4>(6) Business owner does not pay the following</h4>
+                    <h4>(i) No transection fees</h4>
+                    <h4>(ii) No processing fees</h4>
+                    <h4>(iii) No sign up fees</h4>
+                    <h4>(iv) No contract </h4>
               </div>
               <div className="dashItem" style={{ background: "#C0C0C0" }}>
                     <h3>Platinum Package</h3> 
-                    <h3>$199/month</h3>
+                    <h3>$499.99/month</h3>
                     <h3>All Benefits of Gold Package Plus</h3>
-                    <h4>i. Marketing, advertising and promoting of your business</h4>
-                    <h4>ii. 24 hours customer service </h4>
+                    <h4>(1) Facebook marketing </h4>
+                    <h4>(2) Instagram marketing  </h4>
+                    <h4>(3) google marketing  </h4>
+                    <h4>(4) email marketing  </h4>
+                    <h4>(5) 24 hours customer service  </h4>
+                    <h4>(6) you can downgrade after six months  </h4>
               </div>
             </div>
           </div>
