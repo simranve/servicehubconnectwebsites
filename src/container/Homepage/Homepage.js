@@ -164,8 +164,8 @@ class Homepage extends React.Component{
             <div className="dashItemCont mt-4">
               {categoryList}
             </div>
-            <h2><u>Plans</u></h2>
-            <div className="dashItemCont1 mt-4">
+            {/* <h2><u>Plans</u></h2> */}
+            {/* <div className="dashItemCont1 mt-4">
               <div className="dashItem" style={{ background: "#2dbbab" }}>
                   <h3>Basic Package</h3> 
                   <h3> $29.99/Month</h3>
@@ -211,7 +211,7 @@ class Homepage extends React.Component{
                     <h4>(5) 24 hours customer service  </h4>
                     <h4>(6) you can downgrade after six months  </h4>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
         <Footer />
